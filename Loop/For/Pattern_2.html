@@ -1,9 +1,12 @@
 <script>
   // Made By Sohan
+  // var row = prompt("Please enter your Number of row", "");
   var row = 5;
+  var n = 1;
   for (var i = 1; i <= row; i++) {
-    for (var j = 1; j <= row - i + 1; j++) {
-      document.write("* ");
+    for (var j = 1; j <= i; j++) {
+      document.write(n + " ");
+      n++;
     }
     document.write("<br>");
   }
