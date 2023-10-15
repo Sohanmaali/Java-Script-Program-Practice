@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Selected Checkboxes</title>
+  </head>
+  <body>
+    <h1>Selected Checkboxes</h1>
+
+    <input type="checkbox" id="checkbox1" value="Coffee" /> Coffee
+    <input type="checkbox" id="checkbox2" value="Choclate" /> Choclate
+    <input type="checkbox" id="checkbox3" value="Icecream" /> Icecream
+    <input type="checkbox" id="checkbox3" value="cookies" /> cookies
+
+    <br />
+    <button onclick="showSelectedCheckboxes()">Show Selected Checkboxes</button>
+
+    <script>
+      function showSelectedCheckboxes() {
+        var checkbox1 = document.getElementById("checkbox1");
+        var checkbox2 = document.getElementById("checkbox2");
+        var checkbox3 = document.getElementById("checkbox3");
+
+        var selectedCheckboxes = [];
+
+        if (checkbox1.checked) {
+          selectedCheckboxes.push(checkbox1.value);
+        }
+        if (checkbox2.checked) {
+          selectedCheckboxes.push(checkbox2.value);
+        }
+        if (checkbox3.checked) {
+          selectedCheckboxes.push(checkbox3.value);
+        }
+
+        if (selectedCheckboxes.length > 0) {
+          alert("Selected Checkboxes:\n" + selectedCheckboxes.join("\n"));
+        } else {
+          alert("No checkboxes selected.");
+        }
+      }
+    </script>
+  </body>
+</html>

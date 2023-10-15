@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #main {
+        display: flex;
+        justify-content: space-evenly;
+      }
+      .colordiv {
+        border: 1px solid;
+        height: 100px;
+        width: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%; /* Use 50% for a perfect circle */
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="main">
+      <div class="colordiv" id="first">1</div>
+      <div class="colordiv" id="second">2</div>
+      <div class="colordiv" id="third">3</div>
+      <div class="colordiv" id="fourth">4</div>
+      <div class="colordiv" id="fifth">5</div>
+    </div>
+    <select id="circleSelector">
+      <option>select circle</option>
+      <option value="first">1</option>
+      <option value="second">2</option>
+      <option value="third">3</option>
+      <option value="fourth">4</option>
+      <option value="fifth">5</option>
+    </select>
+    <select id="colorSelector">
+      <option>select color</option>
+      <option value="red">Red</option>
+      <option value="green">Green</option>
+      <option value="blue">Blue</option>
+    </select>
+
+    <script>
+      var colorSelector = document.getElementById("colorSelector");
+      var circleSelector = document.getElementById("circleSelector");
+
+      colorSelector.addEventListener("change", function () {
+        var color = colorSelector.value;
+        var circleId = circleSelector.value;
+        var circle = document.getElementById(circleId);
+
+        if (circle) {
+          circle.style.backgroundColor = color;
+        }
+        if (!circle) {
+          circle.style.backgroundColor = black;
+        }
+      });
+    </script>
+  </body>
+</html>
