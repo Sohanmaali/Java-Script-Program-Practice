@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #main {
+        display: flex;
+        justify-content: space-between;
+      }
+      #first,
+      #second,
+      #third {
+        border: 1px solid;
+        height: 100px;
+        width: 90%;
+      }
+      #main2 {
+        display: flex;
+        justify-content: space-between;
+      }
+      #colorChangeDiv,
+      #colorChangeDivone,
+      #colorChangeDivthree {
+        border: 1px solid;
+        height: 100px;
+        width: 90%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Change Div Color</h1>
+
+    <div id="main2">
+      <div id="colorChangeDiv"></div>
+      <div id="colorChangeDivone"></div>
+      <div id="colorChangeDivthree"></div>
+    </div>
+
+    <select id="colorSelector">
+      <option>Select color</option>
+      <option value="red">Red</option>
+      <option value="green">Green</option>
+      <option value="blue">Blue</option>
+    </select>
+    <select id="colorSelectorone">
+      <option>Select color2</option>
+      <option value="red">Red</option>
+      <option value="green">Green</option>
+      <option value="blue">Blue</option>
+    </select>
+    <select id="colorSelectortwo">
+      <option>Select color 3</option>
+      <option value="red">Red</option>
+      <option value="green">Green</option>
+      <option value="blue">Blue</option>
+    </select>
+
+    <script>
+      var colorSelector = document.getElementById("colorSelector");
+      var colorChangeDiv = document.getElementById("colorChangeDiv");
+
+      colorSelector.addEventListener("change", function () {
+        var selectedColor = colorSelector.value;
+        colorChangeDiv.style.backgroundColor = selectedColor;
+      });
+
+      var colorSelectorone = document.getElementById("colorSelectorone");
+      var colorChangeDivone = document.getElementById("colorChangeDivone");
+
+      colorSelectorone.addEventListener("change", function () {
+        var selectedColor = colorSelectorone.value;
+        colorChangeDivone.style.backgroundColor = selectedColor;
+      });
+
+      var colorSelectortwo = document.getElementById("colorSelectortwo");
+      var colorChangeDivthree = document.getElementById("colorChangeDivthree");
+
+      colorSelectortwo.addEventListener("change", function () {
+        var selectedColor = colorSelectortwo.value;
+        colorChangeDivthree.style.backgroundColor = selectedColor;
+      });
+    </script>
+  </body>
+</html>

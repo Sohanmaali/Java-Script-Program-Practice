@@ -31,7 +31,7 @@
         if (checkbox3.checked) {
           selectedCheckboxes.push(checkbox3.value);
         }
-
+        var list = selectedCheckboxes.join("\n");
         if (selectedCheckboxes.length > 0) {
           alert("Selected Checkboxes:\n" + selectedCheckboxes.join("\n"));
         } else {
