@@ -1,48 +1,33 @@
-<!-- Sohan -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Swapper</title>
     <style>
-      #image-container {
-        width: 300px;
-      }
-
-      #swap-image {
+      img {
         max-width: 100%;
         height: auto;
       }
-
-      #swap-button {
-        margin-top: 10px;
-        cursor: pointer;
-        background-color: #3498db;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-      }
     </style>
   </head>
-
   <body>
-    <div id="image-container">
-      <img id="swap-image" src="Images/pro-3.jpg" alt="Image 1" />
-    </div>
+    <img id="image1" src="Images/about-img1.jpg" alt="Image 1" />
+    <img id="image2" src="Images/about-img2.jpg" alt="Image 2" />
 
-    <button id="swap-button" onclick="swapImage()">
-      <img src="Images/slider-img.jpg" alt="" height="100" width="100" />
-    </button>
+    <button onclick="swapImages()">Swap Images</button>
+
     <script>
-      function swapImage() {
-        const imageElement = document.getElementById("swap-image");
-        const currentImage = imageElement.getAttribute("src");
+      function swapImages() {
+        var image1 = document.getElementById("image1");
+        var image2 = document.getElementById("image2");
 
-        if (currentImage === "./Img/imagescar1.jpeg") {
-          imageElement.setAttribute("alt", "");
-        } else {
-          imageElement.setAttribute("src", "Images/about-img2.jpg");
-          imageElement.setAttribute("alt", "Image 2");
-        }
+        // Get the source of the first image
+        var tempSrc = image1.src;
+
+        // Swap the sources of the two images
+        image1.src = image2.src;
+        image2.src = tempSrc;
       }
     </script>
   </body>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stopwatch</title>
+    <style>
+      body {
+        text-align: center;
+      }
+
+      #stopwatch {
+        font-size: 2em;
+        margin: 20px;
+      }
+      #text {
+        font-size: 25px;
+        margin: 20px;
+      }
+
+      #buttons {
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="text">Min:Sec:Mili</div>
+    <div id="stopwatch">00 : 00 : 00</div>
+    <div id="buttons">
+      <button onclick="startStopwatch()" id="start">Start</button>
+      <button onclick="stopResumeStopwatch()" id="stop">Stop</button>
+      <button onclick="resetStopwatch()">Reset</button>
+    </div>
+
+    <script>
+      let startTime;
+      let running = false;
+      let elapsedTime = 0;
+      let timerInterval;
+
+      function startStopwatch() {
+        if (!running) {
+          startTime = Date.now() - elapsedTime;
+          timerInterval = setInterval(updateTime, 10);
+          running = true;
+          document.getElementById("start").disabled = true;
+        }
+      }
+
+      function stopResumeStopwatch() {
+        if (running) {
+          clearInterval(timerInterval);
+          running = false;
+        } else {
+          startStopwatch();
+        }
+        updateButtonState();
+      }
+
+      function resetStopwatch() {
+        clearInterval(timerInterval);
+
+        elapsedTime = 0;
+        document.getElementById("stopwatch").innerHTML = "00:00:00";
+        document.getElementById("stop").innerHTML = "Stop";
+        document.getElementById("start").disabled = false;
+        running = false;
+      }
+
+      function updateTime() {
+        const currentTime = Date.now();
+        elapsedTime = currentTime - startTime;
+        displayTime(elapsedTime);
+      }
+
+      function displayTime(time) {
+        const minutes = Math.floor(time / (60 * 1000))
+          .toString()
+          .padStart(2, "0");
+        const seconds = Math.floor((time % (60 * 1000)) / 1000)
+          .toString()
+          .padStart(2, "0");
+        const milliseconds = (time % 100).toString().padStart(2, "0");
+        document.getElementById(
+          "stopwatch"
+        ).innerText = `${minutes}:${seconds}:${milliseconds}`;
+      }
+
+      function updateButtonState() {
+        const stopResumeButton = document.querySelector("button:nth-child(2)");
+        stopResumeButton.innerText = running ? "Stop" : "Resume";
+      }
+    </script>
+  </body>
+</html>
