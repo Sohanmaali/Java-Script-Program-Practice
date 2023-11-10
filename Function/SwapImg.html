@@ -3,32 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Image Swapper</title>
-    <style>
-      img {
-        max-width: 100%;
-        height: auto;
-      }
-    </style>
-  </head>
-  <body>
-    <img id="image1" src="Images/about-img1.jpg" alt="Image 1" />
-    <img id="image2" src="Images/about-img2.jpg" alt="Image 2" />
-
-    <button onclick="swapImages()">Swap Images</button>
-
+    <title>Document</title>
     <script>
-      function swapImages() {
-        var image1 = document.getElementById("image1");
-        var image2 = document.getElementById("image2");
-
-        // Get the source of the first image
-        var tempSrc = image1.src;
-
-        // Swap the sources of the two images
-        image1.src = image2.src;
-        image2.src = tempSrc;
+      function swap(id) {
+        var first = document.getElementById(id).src;
+        var img1 = document.getElementById("main").src;
+        document.getElementById("main").src = first;
+        document.getElementById(id).src = img1;
       }
     </script>
+  </head>
+  <body>
+    <table align="center" cellpadding="5" border="1" cellspacing="0">
+      <tr>
+        <td colspan="3">
+          <img src="Images/about-img1.jpg" alt="" id="main" width="450px" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img
+            src="Images/about-img2.jpg"
+            alt=""
+            onclick="swap('img1')"
+            id="img1"
+            width="150px"
+          />
+        </td>
+        <td>
+          <img
+            src="Images/pro-3.jpg"
+            alt=""
+            id="img2"
+            onclick="swap('img2')"
+            width="150px"
+          />
+        </td>
+        <td>
+          <img
+            src="Images/slider-img.jpg"
+            alt=""
+            id="img3"
+            onclick="swap('img3')"
+            width="150px"
+          />
+        </td>
+      </tr>
+      `
+    </table>
   </body>
 </html>
