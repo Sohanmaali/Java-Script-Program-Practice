@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="submit" name="" id="" value="Show Form" onclick="showForm()" />
+    <div id="myForm"></div>
+    <script>
+      var flag = true;
+      function showForm() {
+           var form =
+           "<form> Name: <br> <input type ='text'><br>Enter Your Massage: <br><textarea rows ='5' cols='8'> </textarea> </form>";
+        if (flag) {
+          document.getElementById("myForm").innerHTML = form;
+          flag = false;
+        } else {
+          document.getElementById("myForm").innerHTML = "";
+          flag = true;
+        }
+      }
+    </script>
+  </body>
+</html>

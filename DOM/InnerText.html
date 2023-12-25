@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InnerText</title>
+  </head>
+  <body>
+    <form name="myForm">
+      <input type="text" value="" name="userPass" onkeyup="validate()" />
+      <span id="mylocation"></span>
+    </form>
+
+    <script>
+      function validate() {
+        //    var value = document.getElementsByName("userPass").value.length;
+        var msg = "";
+        var value = document.myForm.userPass.value.length;
+        //    document.write(value);
+        if (value < 3) {
+          msg = "Week Password";
+        } else if (value < 8) {
+          msg = "Midem Password";
+        } else if (value >= 8) {
+          msg = "Strong Password";
+        }
+        document.getElementById("mylocation").innerText = msg;
+      }
+    </script>
+  </body>
+</html>

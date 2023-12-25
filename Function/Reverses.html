@@ -1,0 +1,28 @@
+<!-- <script>
+  document.write(reverse(8566));
+  function reverse(i) {
+    var rev = 0;
+    while (i >= 0) {
+      rev = rev * rev + (i % 10);
+      i /= 10;
+    }
+    return rev;
+  }
+</script> -->
+<script>
+  let i = 8566;
+  document.write(reverse(i));
+
+  function reverse(i) {
+    var rev = 0;
+    while (i > 0) {
+      var rem = i % 10;
+      rev = rev * 10 + rem;
+
+      i = Math.floor(i / 10);
+      // document.write(i / 10);
+      // document.write("<br>");
+    }
+    return rev;
+  }
+</script>

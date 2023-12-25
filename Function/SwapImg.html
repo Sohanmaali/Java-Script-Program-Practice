@@ -6,10 +6,8 @@
     <title>Document</title>
     <script>
       function swap(id) {
-        var first = document.getElementById(id).src;
-        var img1 = document.getElementById("main").src;
-        document.getElementById("main").src = first;
-        document.getElementById(id).src = img1;
+        document.getElementById("main").src = document.getElementById(id).src;
+        document.getElementById(id).src = document.getElementById("main").src;
       }
     </script>
   </head>

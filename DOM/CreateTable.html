@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Table</title>
+  </head>
+  <body>
+    <input type="submit" value="Show-Table" onclick="showTable()" />
+    <div id="myTable"></div>
+    <script>
+      var flag = true;
+      function showTable() {
+        var mytable =
+          "<table border= '1px'><thead><tr><th>Name</th><th>Father</th><th>Mother</th><th>Dob</th></tr></thead><tbody><tr><td>SOHAN</td> <td>KAMLA</td> <td>uma</td><td>08/10/2002</td></tr></tbody></table>";
+        if (flag) {
+          document.getElementById("myTable").innerHTML = mytable;
+          flag = false;
+        } else {
+          document.getElementById("myTable").innerHTML = "";
+          flag = true;
+        }
+      }
+    </script>
+  </body>
+</html>
