@@ -7,9 +7,12 @@
   </head>
 
   <body>
-    <p>This is JavaScript DOM before() method demo.</p>
-
-    <script>
+    <!-- <p>This is JavaScript DOM before() method demo.</p> -->
+    <ul>
+      <li>Angular</li>
+      <li>Vue</li>
+    </ul>
+    <!-- <script>
       const p = document.querySelector("p");
 
       // create a new h1 element
@@ -21,6 +24,30 @@
       // insert the h1 before the paragraph
       p.before(h1);
       p.before(h2);
+    </script> -->
+    <!-- using DocumentFragment -->
+    <!-- <script>
+      const list = document.querySelector("ul");
+
+      const libs = ["React", "Meteor", "Polymer"];
+      const items = new DocumentFragment();
+      libs.forEach((element) => {
+        const item = document.createElement("li");
+        item.innerText = element;
+        items.appendChild(item);
+      });
+      list.firstChild.before(items);
+      </script> -->
+    <!-- using Map MEthod -->
+    <script>
+      const ul = document.querySelector("ul");
+      const libs = ["React", "Meteor", "Polymer"];
+      const list = libs.map((lis) => {
+        const li = document.createElement("li");
+        li.innerHTML = lis;
+        return li;
+      });
+      ul.firstChild.before(...list);
     </script>
   </body>
 </html>
