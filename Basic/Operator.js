@@ -16,3 +16,4 @@ function Func3() {
 let x = (Func1(), Func2(), Func3());
 
 console.log(x);
+// console.log(2**5);
