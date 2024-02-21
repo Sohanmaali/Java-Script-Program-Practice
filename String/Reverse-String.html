@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      input {
+        height: 30px;
+        width: 300px;
+      }
+      div {
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">We work on reverse String</h1>
+
+    <div>
+      <input type="text" onkeyup="reverseString()" id="oriData" />
+      <input type="text" id="reverse" />
+    </div>
+
+    <script>
+      function reverseString() {
+        var oriData = document.getElementById("oriData").value;
+
+        //    alert(oriData);
+        var str = "";
+        for (let i = oriData.length - 1; i >= 0; i--) {
+          str += oriData[i];
+        }
+        document.getElementById("reverse").value = str;
+      }
+    </script>
+  </body>
+</html>

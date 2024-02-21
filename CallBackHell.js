@@ -17,3 +17,21 @@
 //      });
 // });
 
+// ================================================
+function getData(data, callback) {
+     setTimeout(() => {
+          console.log("Data = " + data);
+          if (callback) {
+               callback();
+          }
+     }, 3000);
+}
+getData(2, () => {
+     getData(3, () => {
+          getData(4, () => {
+               getData(5, () => {
+                    getData(6);
+               });
+          });
+     });
+});
