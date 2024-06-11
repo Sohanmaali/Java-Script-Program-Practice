@@ -1,4 +1,3 @@
-
 // Made By Sohan
 var row = 5;
 for (var i = 1; i <= row; i++) {
@@ -8,4 +7,6 @@ for (var i = 1; i <= row; i++) {
   }
   console.log(x + " ");
 }
+
+//code for add two number
 

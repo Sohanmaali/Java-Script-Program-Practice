@@ -1,9 +1,8 @@
 function Header() {
      var main_contener = document.getElementById("main-contener");
      var header = document.createElement("header");
-     // window.alert(main_contener);
      header.setAttribute("style", "height: 10vh; width:100vw;");
-     header.setAttribute("class", "d-flex align-items-center  justify-content-between bg-info");
+     header.setAttribute("class", "d-flex align-items-center justify-content-between bg-info");
 
      var logoDiv = document.createElement("div");
      logoDiv.setAttribute("style", "height: 98%; width:15%;");

@@ -17,21 +17,38 @@
 //      });
 // });
 
-// ================================================
-function getData(data, callback) {
+// // ================================================
+// function getData(data, callback) {
+//      setTimeout(() => {
+//           console.log("Data = " + data);
+//           if (callback) {
+//                callback();
+//           }
+//      }, 3000);
+// }
+// getData(2, () => {
+//      getData(3, () => {
+//           getData(4, () => {
+//                getData(5, () => {
+//                     getData(6);
+//                });
+//           });
+//      });
+// });
+// ==========================================================
+let arr = ["Sohan", "Maali", "Indore"];
+let printName = () => {
      setTimeout(() => {
-          console.log("Data = " + data);
-          if (callback) {
-               callback();
-          }
-     }, 3000);
+          print(arr[0])
+          setTimeout(() => {
+               print(arr[1])
+               setTimeout(() => {
+                    print(arr[2])
+               }, 2000);
+          }, 2000);
+     }, 2000);
 }
-getData(2, () => {
-     getData(3, () => {
-          getData(4, () => {
-               getData(5, () => {
-                    getData(6);
-               });
-          });
-     });
-});
+let print = (value) => {
+     console.log(value);
+}
+printName();
