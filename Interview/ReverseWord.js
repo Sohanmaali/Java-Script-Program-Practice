@@ -2,31 +2,28 @@ let word = "hy i am sohan";
 let s = "";
 
 // ====================================================
-// let wordArray = word.split(/\s+/);
-
-// for (let i = wordArray.length - 1; i >= 0; i--) {
-//   for (let j = 0; j < wordArray[i].length; j++) {
-//     s += wordArray[i].charAt(j);
+// let char = word.split(/\s+/);
+// for (let i = char.length - 1; i >= 0; i--) {
+//   for (let start = 0; start < char[i].length; start++) {
+//     s += char[i].charAt(start);
 //   }
-//   if (i > 0) {
-//     s += " ";
-//   }
+//   if (i > 0) s += " ";
 // }
+
 // ==================================================
 // let length = word.length;
-
 // for (let i = length - 1; i >= 0; i--) {
 //   if (word.charAt(i) === " " || i === 0) {
-//     let start = i === 0 ? i : i + 1;
+//     let start = i == 0 ? i : i + 1;
 //     let end = length;
 //     while (start < end) {
 //       s += word.charAt(start);
 //       start++;
 //     }
-//     length = i;
-//     if (i > 0) {
+//     if (i != 0) {
 //       s += " ";
 //     }
+//     length = i;
 //   }
 // }
 

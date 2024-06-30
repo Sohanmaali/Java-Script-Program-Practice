@@ -41,14 +41,22 @@ function f1() {
     setTimeout(() => {
       console.log("i am settimeout");
       res("i am res");
-    }, 2000);
+    }, 3000);
   });
+}
+function f2() {
+  console.log("i am f2");
 }
 
 f1()
   .then((rej) => {
     console.log(rej);
   })
+  .then((res) => {
+    console.log("res");
+  })
   .catch((rej) => {
     console.log(rej);
   });
+
+f2();

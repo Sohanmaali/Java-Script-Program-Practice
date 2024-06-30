@@ -22,17 +22,20 @@
 // })
 // ===================Chain =====================
 function getData(data) {
-     return new Promise((resolve, reject) => {
-          setTimeout(() => {
-               console.log("Data = ", data);
-               resolve("Success");
-          }, 2000);
-     });
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("Data = ", data);
+      resolve("Success");
+    }, 2000);
+  });
 }
-getData(1).then((resolve) => {
-     return getData(2);
-}).then((resolve) => {
-     return getData(3);
-}).then((resolve) => {
-     console.log(resolve);
-});
+getData(1)
+  .then((resolve) => {
+    return getData(2);
+  })
+  .then((resolve) => {
+    return getData(3);
+  })
+  .then((resolve) => {
+    console.log(resolve);
+  });
