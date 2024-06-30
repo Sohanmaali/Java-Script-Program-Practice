@@ -8,7 +8,6 @@
 //      }, 4000);
 // });
 
-
 // pro.then((resolve) => {
 //      console.log("resolve");
 // }).catch((error) => {
@@ -28,7 +27,6 @@
 // }).catch((reject) => {
 //      console.log(reject);
 // });
-
 
 // function getUsers() {
 //      return new Promise((resolve, reject) => {
@@ -50,41 +48,43 @@
 // ==============================================
 
 function getData(data) {
-     return new Promise((resolve, reject) => {
-          setTimeout(() => {
-               console.log("Data geted " + data);
-               resolve(data);
-               // reject("reject");
-          }, 2000);
-     });
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("Data geted " + data);
+      resolve(data);
+      // reject("reject");
+    }, 2000);
+  });
 }
 let p = getData(2);
-p.then((res) => {
-     console.log(res);
-     return getData(3);
 
-}).then((res) => {
-     console.log(res);
-}).then((res) => {
-     console.log("Success");
-}).catch((rej) => {
-     console.log(rej);
-});
+p.then((res) => {
+  console.log(res);
+  return getData(3);
+})
+  .then((res) => {
+    console.log(res);
+  })
+  .then((res) => {
+    console.log("Success");
+  })
+  .catch((rej) => {
+    console.log(rej);
+  });
 // ============================================
 
 function job(data) {
-     return new Promise((res, rej) => {
-
-          if (data % 2 == 0) {
-               setTimeout(() => {
-                    res("even");
-               }, 2000);
-          } else if (data % 2 != 0) {
-               setTimeout(() => {
-                    res("odd");
-               }, 1000);
-          } else {
-               rej("error");
-          }
-     });
+  return new Promise((res, rej) => {
+    if (data % 2 == 0) {
+      setTimeout(() => {
+        res("even");
+      }, 2000);
+    } else if (data % 2 != 0) {
+      setTimeout(() => {
+        res("odd");
+      }, 1000);
+    } else {
+      rej("error");
+    }
+  });
 }

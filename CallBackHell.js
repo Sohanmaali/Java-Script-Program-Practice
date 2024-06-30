@@ -38,17 +38,17 @@
 // ==========================================================
 let arr = ["Sohan", "Maali", "Indore"];
 let printName = () => {
-     setTimeout(() => {
-          print(arr[0])
-          setTimeout(() => {
-               print(arr[1])
-               setTimeout(() => {
-                    print(arr[2])
-               }, 2000);
-          }, 2000);
-     }, 2000);
-}
+  setTimeout(() => {
+    print(arr[0]);
+    setTimeout(() => {
+      print(arr[1]);
+      setTimeout(() => {
+        print(arr[2]);
+      }, 2000);
+    }, 2000);
+  }, 2000);
+};
 let print = (value) => {
-     console.log(value);
-}
+  console.log(value);
+};
 printName();
