@@ -11,7 +11,7 @@ let s = "asdffds";
 
 // let char = [...s];
 // let b = new Array(char.length).fill(false);
-
+// console.log(b);
 // for (let i = 0; i < char.length; i++) {
 //   let c = 1;
 //   if (b[i]) continue;
